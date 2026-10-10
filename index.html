@@ -1,1 +1,250 @@
-<h1>Hello</h1>
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172c2a">
+  <meta name="description" content="CV Jodi Jonathan, Software Engineer dengan pengalaman Java Spring, Go, dan pengembangan aplikasi bisnis.">
+  <title>Jodi Jonathan — Software Engineer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172c2a;
+      --muted: #53625d;
+      --paper: #f7f6f0;
+      --line: #d6dbd0;
+      --accent: #c9ed94;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-underline-offset: .25em; }
+    a:focus-visible { outline: 3px solid #57975b; outline-offset: 5px; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow {
+      margin: 0;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    header, .hero { background: var(--ink); color: var(--paper); }
+    header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 26px;
+      border-bottom: 1px solid #46605a;
+    }
+    .brand { font-weight: 750; font-size: 1.1rem; text-decoration: none; letter-spacing: -.04em; }
+    nav { display: flex; flex-wrap: wrap; gap: 12px 26px; font-size: .86rem; }
+    nav a { text-decoration: none; }
+    nav a:hover, .contact a:hover { text-decoration: underline; }
+
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(235px, .7fr);
+      align-items: end;
+      gap: 48px;
+      padding-block: clamp(80px, 12vw, 164px) 100px;
+    }
+    .hero .eyebrow { color: var(--accent); }
+    h1 {
+      max-width: 820px;
+      margin: 22px 0 28px;
+      font-size: clamp(3.6rem, 9vw, 8rem);
+      line-height: .95;
+      letter-spacing: -.085em;
+    }
+    .hero-copy { max-width: 600px; margin: 0; font-size: clamp(1.08rem, 2vw, 1.4rem); line-height: 1.55; color: #d8e3d8; }
+    .hero-aside { padding: 24px 0 0 24px; border-left: 1px solid #789087; }
+    .hero-aside p:last-child { max-width: 260px; margin: 18px 0 0; font-size: 1.5rem; line-height: 1.35; letter-spacing: -.035em; }
+    .accent-bar { height: 12px; background: var(--accent); }
+
+    main section { scroll-margin-top: 28px; padding-block: 100px; border-bottom: 1px solid var(--line); }
+    .section-grid { display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 2.4fr); gap: 48px; }
+    .section-title { margin: 0; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
+    .lead { max-width: 790px; margin: 0; font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.35; letter-spacing: -.04em; }
+    .section-note { max-width: 700px; margin: 26px 0 0; color: var(--muted); }
+
+    .job { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 24px; padding-bottom: 48px; }
+    .job + .job { padding-top: 48px; border-top: 1px solid var(--line); }
+    .job:last-child { padding-bottom: 0; }
+    .job h3 { margin: 0; font-size: clamp(1.4rem, 2.4vw, 2rem); line-height: 1.2; letter-spacing: -.045em; }
+    .job .company { margin: 8px 0 0; font-weight: 600; }
+    .job time, .period { white-space: nowrap; color: var(--muted); font-size: .88rem; }
+    .job ul { grid-column: 1 / -1; margin: 14px 0 0; padding-left: 1.25em; }
+    .job li + li { margin-top: 10px; }
+    .job li::marker { color: #67894e; }
+
+    .skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px 48px; }
+    .skills h3 { margin: 0 0 12px; font-size: 1rem; }
+    .skills p { margin: 0; color: var(--muted); }
+    .education h3 { margin: 0; font-size: 1.65rem; letter-spacing: -.04em; }
+    .education p { margin: 8px 0 0; color: var(--muted); }
+
+    .contact-section { background: var(--accent); }
+    .contact-section .wrap { padding-block: 100px; }
+    .contact-section h2 { max-width: 800px; margin: 20px 0 36px; font-size: clamp(2.8rem, 6.5vw, 5.8rem); line-height: 1; letter-spacing: -.07em; }
+    .contact { display: flex; flex-wrap: wrap; gap: 16px 36px; }
+    .contact a { font-weight: 700; font-size: 1.05rem; }
+    footer { background: var(--ink); color: var(--paper); }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; padding-block: 27px; font-size: .85rem; }
+    footer p { margin: 0; }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 36px, 540px); }
+      header .wrap { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .hero .wrap { grid-template-columns: 1fr; gap: 45px; padding-block: 80px 72px; }
+      .hero-aside { max-width: 340px; }
+      main section { padding-block: 70px; }
+      .section-grid { grid-template-columns: 1fr; gap: 25px; }
+      .job { grid-template-columns: 1fr; }
+      .job ul { grid-column: 1; }
+      .skills { grid-template-columns: 1fr; gap: 26px; }
+      .contact-section .wrap { padding-block: 75px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+    @media print {
+      :root { --paper: #fff; --ink: #172c2a; }
+      body { font-size: 10pt; }
+      header, .hero, footer { background: #fff; color: var(--ink); }
+      header .wrap { border-color: var(--line); }
+      nav, .hero-aside, .accent-bar, footer { display: none; }
+      .hero .wrap { display: block; padding-block: 26px; }
+      .hero .eyebrow, .hero-copy { color: var(--ink); }
+      h1 { font-size: 42pt; margin-block: 10px; }
+      main section, .contact-section .wrap { padding-block: 24px; }
+      .contact-section { background: #fff; }
+      .contact-section h2 { font-size: 26pt; margin-block: 10px; }
+      .job, .skills > div, .education { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="#atas" aria-label="Jodi Jonathan, kembali ke atas">Jodi Jonathan<span aria-hidden="true"> ↗</span></a>
+      <nav aria-label="Navigasi utama">
+        <a href="#profil">Profil</a>
+        <a href="#pengalaman">Pengalaman</a>
+        <a href="#keahlian">Keahlian</a>
+        <a href="#pendidikan">Pendidikan</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero" id="atas">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">CV digital / Software Engineer</p>
+        <h1>Jodi<br>Jonathan<span style="color: var(--accent)">.</span></h1>
+        <p class="hero-copy">Membangun layanan, merawat aplikasi bisnis, dan terus memperbaiki cara perangkat lunak bekerja.</p>
+      </div>
+      <div class="hero-aside">
+        <p class="eyebrow">Fokus</p>
+        <p>Java / Spring<br>Go<br>Pengembangan berbantuan AI</p>
+      </div>
+    </div>
+  </div>
+  <div class="accent-bar" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <section id="profil" class="section-grid" aria-labelledby="profil-title">
+      <h2 class="section-title" id="profil-title">01 / Profil</h2>
+      <div>
+        <p class="lead">Software Engineer dengan pengalaman mengembangkan aplikasi produksi dokumen dan memelihara marketplace B2B yang terintegrasi dengan sistem klaim.</p>
+        <p class="section-note">Berfokus pada Java dan Spring, menulis layanan Go untuk konversi aplikasi internal yang sedang berlangsung, serta menggunakan agentic AI dalam proses pengembangan dengan tetap me-review kode yang dihasilkan.</p>
+      </div>
+    </section>
+
+    <section id="pengalaman" class="section-grid" aria-labelledby="pengalaman-title">
+      <h2 class="section-title" id="pengalaman-title">02 / Pengalaman</h2>
+      <div>
+        <article class="job">
+          <div>
+            <h3>Software Engineer</h3>
+            <p class="company">PT Asuransi Sinar Mas</p>
+          </div>
+          <p class="period"><time datetime="2019-09">Sep 2019</time> – sekarang</p>
+          <ul>
+            <li>Memelihara marketplace B2B untuk tender suku cadang mobil yang terintegrasi dengan sistem klaim; memperbaiki bug, menambahkan fitur, dan memperbaiki tampilan frontend.</li>
+            <li>Bekerja dengan layanan Java Spring modular yang berkomunikasi melalui Dubbo, serta frontend Vue dan Nuxt. Menggunakan MySQL, RocketMQ, Elasticsearch, dan Redis.</li>
+            <li>Menulis layanan Go dalam proses konversi aplikasi internal yang masih berlangsung, menggunakan agentic AI untuk mendukung pengembangan dan me-review kode yang dihasilkan.</li>
+          </ul>
+        </article>
+        <article class="job">
+          <div>
+            <h3>Programmer</h3>
+            <p class="company">PT Transkom Integrasi Mandiri</p>
+          </div>
+          <p class="period"><time datetime="2016-04">Apr 2016</time> – <time datetime="2019-09">Sep 2019</time></p>
+          <ul>
+            <li>Membuat aplikasi desain tata letak variable printing menggunakan Delphi dan FoxPro.</li>
+            <li>Aplikasi menghasilkan berkas PostScript untuk produksi dokumen seperti rekening koran dan dokumen polis nasabah.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="keahlian" class="section-grid" aria-labelledby="keahlian-title">
+      <h2 class="section-title" id="keahlian-title">03 / Keahlian</h2>
+      <div class="skills">
+        <div>
+          <h3>Backend &amp; integrasi</h3>
+          <p>Java, Spring, Dubbo, Go, RocketMQ</p>
+        </div>
+        <div>
+          <h3>Frontend</h3>
+          <p>Vue, Nuxt</p>
+        </div>
+        <div>
+          <h3>Data &amp; pencarian</h3>
+          <p>MySQL, Redis, Elasticsearch</p>
+        </div>
+        <div>
+          <h3>Pengalaman lainnya</h3>
+          <p>Delphi, FoxPro, PostScript, pengembangan berbantuan agentic AI</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pendidikan" class="section-grid" aria-labelledby="pendidikan-title">
+      <h2 class="section-title" id="pendidikan-title">04 / Pendidikan</h2>
+      <div class="education">
+        <h3>S.Kom. — Informatika</h3>
+        <p>Institut Teknologi Indonesia · 2011–2016</p>
+      </div>
+    </section>
+  </main>
+
+  <section id="kontak" class="contact-section" aria-labelledby="kontak-title">
+    <div class="wrap">
+      <p class="eyebrow">05 / Kontak</p>
+      <h2 id="kontak-title">Mari terhubung.</h2>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/jodi593/">LinkedIn ↗</a>
+        <a href="https://github.com/jodij">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="wrap">
+      <p>Jodi Jonathan</p>
+      <p>Software Engineer</p>
+    </div>
+  </footer>
+</body>
+</html>
